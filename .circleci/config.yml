@@ -62,13 +62,13 @@ jobs:
           name: Build Android JS Bundle
           working_directory: android
           command: |
-            ./gradlew bundleReleaseJsAndAssets
+            cd android; ./gradlew bundleReleaseJsAndAssets
       
       - run:
           name: Build Android APK
           working_directory: android
           command: |
-            ./gradlew assembleRelease -x bundleReleaseJsAndAssets 
+            cd android; ./gradlew assembleRelease -x bundleReleaseJsAndAssets 
 
       - run:
           name: fastlane tests
