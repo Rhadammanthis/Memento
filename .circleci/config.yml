@@ -59,10 +59,11 @@ jobs:
       #     key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
 
       - run:
-        name: Build Android JS Bundle
-        working_directory: android
-        command: |
-          ./gradlew bundleReleaseJsAndAssets
+          name: Build Android JS Bundle
+          working_directory: android
+          command: |
+            ./gradlew bundleReleaseJsAndAssets
+      
       - run:
           name: Build Android APK
           working_directory: android
