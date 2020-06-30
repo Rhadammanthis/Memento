@@ -45,7 +45,7 @@ jobs:
           path: test-results
 
   android:
-    working_directory: ~/demo-react-native/android
+    working_directory: ~/android
     docker:
       - image: circleci/android:api-27-node8-alpha
     steps:
@@ -62,13 +62,13 @@ jobs:
           name: Build Android JS Bundle
           working_directory: android
           command: |
-            cd android; ./gradlew bundleReleaseJsAndAssets
+            ./gradlew bundleReleaseJsAndAssets
       
       - run:
           name: Build Android APK
           working_directory: android
           command: |
-            cd android; ./gradlew assembleRelease -x bundleReleaseJsAndAssets 
+            ./gradlew assembleRelease -x bundleReleaseJsAndAssets 
 
       - run:
           name: fastlane tests
