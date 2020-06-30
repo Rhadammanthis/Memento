@@ -9,7 +9,7 @@ import {
 import { AsyncStorage } from 'react-native';
 
 //A little overkill but, who knows...
-generateKey = () => {
+const generateKey = () => {
     return Date.now().toString()
 }
 
