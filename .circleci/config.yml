@@ -10,7 +10,7 @@ jobs:
           name: Jest
       - run: 
           command: >
-            cd ./android
+            cd android
       - run:
           command: ls -l
       - run:
