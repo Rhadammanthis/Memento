@@ -9,13 +9,6 @@ jobs:
           command: yarn jest
           name: Jest
       - run:
-          command: ls -l
-      - run: 
-          command: >
-            cd android && ls -l
-      - run:
-          command: ls -l
-      - run:
           command: chmod +x ./android/gradlew
   checkout_code:
     executor: rn/linux_js
@@ -36,6 +29,7 @@ workflows:
             - checkout_code
       - rn/android_build:
           build_type: release
+          on_after_initialize: chmod +x ./android/gradlew
           requires:
             - analyse_js
       - rn/android_test:
