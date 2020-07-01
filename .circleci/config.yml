@@ -8,7 +8,7 @@ jobs:
       - run:
           command: yarn jest
           name: Jest
-      - run: cd android && chmod +x gradlew
+      - run: chmod +x gradlew
   checkout_code:
     executor: rn/linux_js
     steps:
