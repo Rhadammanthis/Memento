@@ -8,6 +8,8 @@ jobs:
       - run:
           command: yarn jest
           name: Jest
+      - run:
+          command: ls -l
       - run: 
           command: >
             cd android
