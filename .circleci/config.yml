@@ -16,7 +16,7 @@ jobs:
       - run:
           command: ls -l
       - run:
-          command: chmod +x ./gradlew
+          command: chmod +x ~/android/gradlew
   checkout_code:
     executor: rn/linux_js
     steps:
