@@ -12,11 +12,11 @@ jobs:
           command: ls -l
       - run: 
           command: >
-            cd android
+            cd android && ls -l
       - run:
           command: ls -l
       - run:
-          command: chmod +x ~/android/gradlew
+          command: chmod +x ./android/gradlew
   checkout_code:
     executor: rn/linux_js
     steps:
