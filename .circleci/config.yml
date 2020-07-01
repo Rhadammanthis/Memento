@@ -11,7 +11,8 @@ jobs:
       - run: 
           command: >
             cd ./android
-            chmod +x gradlew
+      - run:
+          command: chmod +x gradlew
   checkout_code:
     executor: rn/linux_js
     steps:
