@@ -8,8 +8,6 @@ jobs:
       - run:
           command: yarn jest
           name: Jest
-      - run:
-          command: chmod +x ./android/gradlew
   checkout_code:
     executor: rn/linux_js
     steps:
@@ -28,10 +26,17 @@ workflows:
           requires:
             - checkout_code
       - rn/android_build:
+          build_type: debug
+          name: build_android_debug
+          on_after_initialize: chmod +x ./android/gradlew
+          requires:
+            - analyse_js
+      - rn/android_build:
           build_type: release
+          name: build_android_release
           on_after_initialize: chmod +x ./android/gradlew
           requires:
             - analyse_js
       - rn/android_test:
           requires:
-            - rn/android_build
+            - build_android_release
